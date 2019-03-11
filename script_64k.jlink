@@ -1,0 +1,30 @@
+device nrf52
+sleep 1
+si 1
+speed 4000
+sleep 1
+
+r
+w4 4001e504 2
+w4 4001e50c 1
+w4 4001e514 1
+sleep 30
+r
+sleep 2
+loadbin CKBD64K.bin 0x20000000
+sleep 2
+verifybin CKBD64K.bin 0x20000000
+
+r
+sleep 2
+loadbin NCKBD64K.bin 0x20000000
+sleep 2
+verifybin NCKBD64K.bin 0x20000000
+
+r
+sleep 2
+loadbin COUNT64K.bin 0x20000000
+sleep 2
+verifybin COUNT64K.bin 0x20000000
+
+q
